@@ -1,0 +1,9 @@
+This project is based on my blog post at http://tonaconsulting.com/improving-liferay-6-cas-integration/
+
+1. Connect LifeRay to CAS (don't do the LDAP integration part).
+2. Build the application using "mvn clean install"
+3. Copy the JAR file to TOMCAT_HOME/webapps/ROOT/WEB-INF/lib
+4. Edit TOMCAT_HOME/webapps/ROOT/WEB-INF/web.xml
+4.1 Replace <filter-class>com.liferay.portal.servlet.filters.sso.cas.CASFilter</filter-class> with <filter-class>org.tona.cas.security.CasNoLdapAuthFilter</filter-class>
+5. Edit TOMCAT_HOME/webapps/ROOT/WEB-INF/classes/portal-ext.properties
+5.1 Add the line auto.login.hooks=org.tona.cas.security.CasNoLdapAuthAutoLogin 
