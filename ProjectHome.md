@@ -1,0 +1,1 @@
+LifeRay Portal can only integrate with a CAS SSO server if the LifeRay portal is connected to the same LDAP server as the CAS server. This is pretty restrictive. This project will remove this restriction.
